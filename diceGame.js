@@ -1,16 +1,6 @@
 document.getElementById('myId').innerHTML="Dice Game";
 
 //DiceCritCahllenge
-let totalScore = 0;
-
-function playDiceCRITChallenge(){
-  d4();
-  d6();
-  d8();
-  d10();
-  d20();
-  console.log("Your Score is" + " " + totalScore);
-}
 
 function diceRoll(side){
   result = Math.floor(Math.random()*side) + 1;
@@ -31,7 +21,6 @@ function d4(){
     else{
       crit = true;
       console.log(" " + score);
-      totalScore = totalScore + score;
       return score;
     }
   }
@@ -50,7 +39,6 @@ function d6(){
     else{
       crit = true;
       console.log(" " + score);
-      totalScore = totalScore + score;
       return score;
     }
   }
@@ -68,7 +56,6 @@ function d8(){
     else{
       crit = true;
       console.log(" " + score);
-      totalScore = totalScore + score;
       return score;
     }
   }
@@ -86,7 +73,6 @@ function d10(){
     else{
       crit = true;
       console.log(" " + score);
-      totalScore = totalScore + score;
       return score;
     }
   }
@@ -104,10 +90,36 @@ function d20(){
     else{
       crit = true;
       console.log(" " + score);
-      totalScore = totalScore + score;
       return score;
     }
   }
+}
+
+function playDiceCRITChallenge(){
+  let scores = [];
+  let totalScore = 0;
+  scores[0] = d4();
+  scores[1] = d6();
+  scores[2] = d8();
+  scores[3] = d10();
+  scores[4] = d20();
+
+  if (scores[0] !== 0) {
+    totalScore = scores[0] + scores[1];
+    console.log(totalScore);
+  }
+  else {
+    totalScore = totalScore + scores[1];
+    console.log(totalScore);
+  }
+  if (scores[1] !== 0) {
+    totalScore = totalScore + scores[2];
+    console.log(totalScore);
+  }
+  
+
+  console.log(scores);
+  console.log("Your score is" + " " + totalScore);
 }
 
 playDiceCRITChallenge();
