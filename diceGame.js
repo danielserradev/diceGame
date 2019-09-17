@@ -97,6 +97,7 @@ function d20(){
 
 function playDiceCRITChallenge(){
   let scores = [];
+  let diceArray = [4, 6, 8, 10, 20];
   let totalScore = 0;
   scores[0] = d4();
   scores[1] = d6();
@@ -104,22 +105,21 @@ function playDiceCRITChallenge(){
   scores[3] = d10();
   scores[4] = d20();
 
-  if (scores[0] !== 0) {
-    totalScore = scores[0] + scores[1];
-    console.log(totalScore);
+  for (let i = 0; i < scores.length; i++) {
+    if (scores[i] == 0) {
+      i++;
+    }
+    else if(i !== 0 && scores[i] === 1) {
+      scores[i-1] = diceRoll(diceArray[i-1]);
+    }
+    else {
+      totalScore += scores[i];
+    }
   }
-  else {
-    totalScore = totalScore + scores[1];
-    console.log(totalScore);
-  }
-  if (scores[1] !== 0) {
-    totalScore = totalScore + scores[2];
-    console.log(totalScore);
-  }
-  
 
-  console.log(scores);
-  console.log("Your score is" + " " + totalScore);
+
+  console.log("Your seperate scores are" + " " + scores);
+  console.log("Your total score is" + " " + totalScore);
 }
 
 playDiceCRITChallenge();
