@@ -105,8 +105,8 @@ function d12(){
     }
     else{
       crit = true;
-      console.log(d12Results);
       d12Results.push(score);
+      console.log(d12Results);
       console.log(" " + score);
       return d12Results;
     }
@@ -126,8 +126,8 @@ function d20(){
     }
     else{
       crit = true;
-      console.log(d20Results);
       d20Results.push(score);
+      console.log(d20Results);
       console.log(" " + score);
       return d20Results;
     }
@@ -136,7 +136,6 @@ function d20(){
 
 function playDiceCRITChallenge(){
   let scores = [];
-  let totalScore = 0;
   scores[0] = d4();
   scores[1] = d6();
   scores[2] = d8();
@@ -144,18 +143,16 @@ function playDiceCRITChallenge(){
   scores[4] = d12();
   scores[5] = d20();
   console.log(scores);
+
+  let totalScore = [];
   for (let i = 0; i < scores.length; i++) {
-    if (scores[i][i] == 0) {
-      i++;
-    }
-    else {
-      totalScore += scores[i];
-    }
+    totalScore.push(scores[i][scores[i].length - 1]);
   }
   for(let i = 0; i < scores.length; i++){
     console.log(scores[i]);
 
   }
+  console.log(totalScore);
   //console.log("Your seperate scores are" + " " + scores);
   //console.log("Your total score is" + " " + totalScore);
 }

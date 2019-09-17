@@ -14,7 +14,9 @@ If your first roll on any die is 1, you go back to the previous die.
   (except for the D4)
 
 The player who has the lowest score after hitting the 20 wins.
-
+--------------------------------------------------------
+User input diceroller
+--------------------------------------------------------
 // function diceSelector(){
 //   let isValid = false;
 //   let size = "";
@@ -30,5 +32,16 @@ The player who has the lowest score after hitting the 20 wins.
 //       isValid = true;
 //       return size;
 //     }
+//   }
+// }
+--------------------------------------------------------
+Old way to add total scores
+--------------------------------------------------------
+// for (let i = 0; i < scores.length; i++) {
+//   if (scores[i] == 0) {
+//     i++;
+//   }
+//   else {
+//     totalScore += scores[i];
 //   }
 // }
