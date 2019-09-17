@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="diceStyles.css">
   <title>Javacript Dice Game</title>
 </head>
 
@@ -8,11 +11,32 @@
 
 
 <body>
-  <br>
+  <center>
   <br>
   <p id="myId"></p>
-  <button type="button" onclick = "playDiceCRITChallenge()">Click me!</button>
-  <div id="finalScore"> </div>
+  <br>
+  <button class= "button" onclick = "playerOne()"> Player 1 </button>
+  <br>
+  <br>
+  <div id="playerOneScore"></div>
+  <br>
+  <button class= "button" onclick = "playerTwo()"> Player 2 </button>
+  <br>
+  <br>
+  <div id="playerTwoScore"></div>
+  <br>
+  <button class= "button" onclick = "playerThree()"> Player 3 </button>
+  <br>
+  <br>
+  <div id="playerThreeScore"></div>
+  <br>
+  <button class= "button" onclick = "playerFour()"> Player 4 </button>
+  <br>
+  <br>
+  <div id="playerFourScore"></div>
+  <br>
+  <br>
+</center>
 </body>
 
 

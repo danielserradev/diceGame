@@ -6,12 +6,12 @@ function playDiceCRITChallenge(){
   let scores = [];
   let totalScores = [];
   let finalScore = 0;
-  scores[0] = d(4);
-  scores[1] = d(6);
-  scores[2] = d(8);
-  scores[3] = d(10);
-  scores[4] = d(12);
-  scores[5] = d(20);
+  scores[0] = rollDice(4);
+  scores[1] = rollDice(6);
+  scores[2] = rollDice(8);
+  scores[3] = rollDice(10);
+  scores[4] = rollDice(12);
+  scores[5] = rollDice(20);
 
   // poping out the total score from each dice
   for (let i = 0; i < scores.length; i++) {
@@ -34,24 +34,23 @@ function playDiceCRITChallenge(){
       finalScore += totalScores[i];
     }
   }
-  console.log(totalScores);
+  console.log("Your dice Totals are" + " " + totalScores);
   console.log("Your final Score is" + " " + finalScore);
 
-  let showScore = document.getElementById("finalScore");
-  document.getElementById('myId').innerHTML=" You scored a" + " " + finalScore;
+  return finalScore;
 }
-function diceRoll(side){
+function diceRoller(side){
   result = Math.floor(Math.random()*side) + 1;
   //console.log(result);
   return result;
 }
 
-function d(highestNumber){
+function rollDice(highestNumber){
   let d4Results = [];
   let crit = false;
   let score = 0;
   while (!crit) {
-    let result = diceRoll(highestNumber);
+    let result = diceRoller(highestNumber);
     d4Results.push(result);
     if (result !== highestNumber) {
       score = score + result;
@@ -64,4 +63,30 @@ function d(highestNumber){
       return d4Results;
     }
   }
+}
+
+function playerOne(){
+  let playerOneScore = playDiceCRITChallenge();
+  console.log(playerOneScore);
+  let showScore = document.getElementById("playeroneScore");
+  document.getElementById('playerOneScore').innerHTML=" Player 1 scored a" + " " + playerOneScore;
+}
+function playerTwo(){
+  let playerTwoScore = playDiceCRITChallenge();
+  console.log(playerTwoScore);
+  let showScore = document.getElementById("playerTwoScore");
+  document.getElementById('playerTwoScore').innerHTML=" Player 2 scored a" + " " + playerTwoScore;
+}
+function playerThree(){
+  let playerThreeScore = playDiceCRITChallenge();
+  console.log(playerThreeScore);
+  let showScore = document.getElementById("playerThreeScore");
+  document.getElementById('playerThreeScore').innerHTML=" Player 3 scored a" + " " + playerThreeScore;
+
+}
+function playerFour(){
+  let playerFourScore = playDiceCRITChallenge();
+  console.log(playerFourScore);
+  let showScore = document.getElementById("playerFourScore");
+  document.getElementById('playerFourScore').innerHTML=" Player 4 scored a" + " " + playerFourScore;
 }
