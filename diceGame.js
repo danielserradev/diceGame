@@ -8,7 +8,6 @@ function diceRoll(side){
   return result;
 }
 
-
 function d4(){
   let d4Results = [];
   let crit = false;
@@ -27,7 +26,6 @@ function d4(){
       return d4Results;
     }
   }
-
 }
 
 function d6(){
@@ -50,7 +48,6 @@ function d6(){
   }
 }
 
-
 function d8(){
   let d8Results = [];
   let crit = false;
@@ -70,7 +67,6 @@ function d8(){
     }
   }
 }
-
 
 function d10(){
   let d10Results = [];
@@ -92,7 +88,6 @@ function d10(){
   }
 }
 
-
 function d12(){
   let d12Results = [];
   let crit = false;
@@ -112,7 +107,6 @@ function d12(){
     }
   }
 }
-
 
 function d20(){
   let d20Results = [];
@@ -136,6 +130,8 @@ function d20(){
 
 function playDiceCRITChallenge(){
   let scores = [];
+  let totalScores = [];
+  let finalScore = 0;
   scores[0] = d4();
   scores[1] = d6();
   scores[2] = d8();
@@ -144,17 +140,36 @@ function playDiceCRITChallenge(){
   scores[5] = d20();
   console.log(scores);
 
-  let totalScore = [];
-  for (let i = 0; i < scores.length; i++) {
-    totalScore.push(scores[i][scores[i].length - 1]);
+  // poping out the total score from each dice
+    for (let i = 0; i < scores.length; i++) {
+      totalScores.push(scores[i][scores[i].length - 1]);
+    }
+
+  // doubling the previous score if natural 1 was hit
+  for (let i = 1; i < scores.length; i++) {
+    if (scores[i][0] == 1) {
+      finalScore += totalScores[i - 1];
+    }
   }
+
+// skipping the score of the next dice if natural crit was hit
+  for (let i = 0; i < totalScores.length; i++) {
+    if (totalScores[i] == 0 && totalScores[i + 1]) {
+      i++;
+    }
+    else {
+      finalScore += totalScores[i];
+    }
+  }
+
+  // logging the total scores in an array
   for(let i = 0; i < scores.length; i++){
     console.log(scores[i]);
 
   }
-  console.log(totalScore);
-  //console.log("Your seperate scores are" + " " + scores);
-  //console.log("Your total score is" + " " + totalScore);
+
+  console.log(totalScores);
+  console.log("Your final Score is" + " " + finalScore);
 }
 
 playDiceCRITChallenge();

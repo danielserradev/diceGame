@@ -8,9 +8,9 @@ Each roll you get before rolling the highest number is saved and
 added to your score.
 
 If your first roll on the current die is the highest number on that die,
-  you skip the next dice.
+  you skip the next dices score.
 
-If your first roll on any die is 1, you go back to the previous die.
+If your first roll on any die is 1, you double the previous score.
   (except for the D4)
 
 The player who has the lowest score after hitting the 20 wins.
@@ -32,16 +32,5 @@ User input diceroller
 //       isValid = true;
 //       return size;
 //     }
-//   }
-// }
---------------------------------------------------------
-Old way to add total scores
---------------------------------------------------------
-// for (let i = 0; i < scores.length; i++) {
-//   if (scores[i] == 0) {
-//     i++;
-//   }
-//   else {
-//     totalScore += scores[i];
 //   }
 // }
