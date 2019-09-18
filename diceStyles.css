@@ -6,7 +6,7 @@ h1{
   font-family: "Georgia";
 }
 .h1ContentCard {
-  background: rgba(225, 230, 226, 0.75);
+  background: rgba(225, 230, 226, 0.90);
   vertical-align: top;
   max-width: 50%;
   width: calc(25% - 20px);;
@@ -37,17 +37,43 @@ h1{
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
 .contentCard {
-  background: rgba(225, 230, 226, 0.75);
+  background: rgba(225, 230, 226, 0.90);
   display: none;
   vertical-align: top;
   max-width: 10%;
   width: calc(75% - 40px);;
   height: 25px;
   white-space: normal;
-  margin: 10px;
+  margin: 1px;
   box-sizing: border-box;
   border-radius: 1px;
   font-weight: bold;
   font-family: "Georgia";
+}
+body {
+  font-family: "Georgia";
+}
+.sidenavleft {
+  background: rgba(225, 230, 226, 0.90);
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 235px;
+  left: 100px;
+  overflow-x: hidden;
+  padding: 20px 0;
+}
+.sidenavright {
+  background: rgba(225, 230, 226, 0.90);
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 445px;
+  right: 100px;
+  overflow-x: hidden;
+  text-align: center;
+  padding: 20px 0;
+
 }

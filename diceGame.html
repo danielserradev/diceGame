@@ -5,68 +5,61 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="diceStyles.css">
-
-
   <title>Javacript Dice Game</title>
 </head>
-
-
-
-
 <body>
-  <center>
-    <br>
-    <br>
+<center>
   <h1 class="h1ContentCard" style="font-size:40px; " id="">🎲Dice <strong>Crit</strong> Challenge🎲</h1>
-  <br>
-  <br>
-  <br>
-  <button class= "button" onclick = "playerOne()"><strong>Player 1 ⚀</strong></button>
-  <br>
-  <br>
-  <div class="contentCard" id="playerOneScore"></div>
-  <br>
-  <br>
-  <button class= "button" onclick = "playerTwo()"><strong>Player 2 ⚁</strong></button>
-  <br>
-  <br>
-  <div class="contentCard" id="playerTwoScore"></div>
-  <br>
-  <br>
-  <button class= "button" onclick = "playerThree()"><strong>Player 3 ⚂</strong></button>
-  <br>
-  <br>
-  <div class="contentCard" id="playerThreeScore"></div>
-  <br>
-  <br>
-  <button class= "button" onclick = "playerFour()"><strong>Player 4 ⚃</strong></button>
-  <br>
-  <br>
-  <div class="contentCard" id="playerFourScore"></div>
-  <br>
-  <br>
+  <div class="sidenavleft">
+    <p>Dice CRIT Challenge</p>
+    <p>Each Player rolls a D4, D6, D8, D10, and D20 in order.</p>
+    <p>The object of the game is to roll each die in order until that player hits the
+      highest number of each individual die.</p>
+    <p>Each roll you get before rolling the highest number is saved and
+      added to your score.</p>
+    <p>If your first roll on the current die is the highest number on that die,
+      you skip the next dices score.</p>
+    <p>If your first roll on any die is 1, you double the previous score.
+      (except for the D4)</p>
+    <p>The player who has the lowest score after hitting the 20 wins.</p>
+  </div>
+    <br>
+    <br>
+  <div class="sidenavright">
+    <br>
+    <p style="font-size:60px; "style="background: rgba(225, 230, 226, 0.90);" id="getWinner"></p>
+    <br>
+  </div>
+    <button class= "button" onclick = "getWinner()"><strong>Play Game</strong></button>
+    <br>
+    <br>
+    <br>
+    <button class= "button" onclick = "playerOne()" id="playerOneButton"><strong>Player 1 ⚀</strong></button>
+    <br>
+    <br>
+    <div class="contentCard" id="playerOneScore"></div>
+    <br>
+    <br>
+    <button class= "button" onclick = "playerTwo()" id="playerTwoButton"><strong>Player 2 ⚁</strong></button>
+    <br>
+    <br>
+    <div class="contentCard" id="playerTwoScore"></div>
+    <br>
+    <br>
+    <button class= "button" onclick = "playerThree()" id="playerThreeButton"><strong>Player 3 ⚂</strong></button>
+    <br>
+    <br>
+    <div class="contentCard" id="playerThreeScore"></div>
+    <br>
+    <br>
+    <button class= "button" onclick = "playerFour()" id="playerFourButton"><strong>Player 4 ⚃</strong></button>
+    <br>
+    <br>
+    <div class="contentCard" id="playerFourScore"></div>
+    <br>
+    <br>
+  </div>
 </center>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="diceGame.js"></script>
+<script src="diceGame.js"></script>
 </html>
