@@ -1,4 +1,4 @@
-document.getElementById('myId').innerHTML="Dice Crit Challenge";
+document.getElementById('myId').innerHTML="";
 
 //DiceCritCahllenge
 
@@ -69,24 +69,32 @@ function playerOne(){
   let playerOneScore = playDiceCRITChallenge();
   console.log(playerOneScore);
   let showScore = document.getElementById("playeroneScore");
-  document.getElementById('playerOneScore').innerHTML=" Player 1 scored a" + " " + playerOneScore;
+
+  let p1score = document.getElementById('playerOneScore');
+  p1score.innerHTML=" Player 1 scored a" + " " + playerOneScore;
+  p1score.style = "display: inline-block;";
 }
 function playerTwo(){
   let playerTwoScore = playDiceCRITChallenge();
   console.log(playerTwoScore);
   let showScore = document.getElementById("playerTwoScore");
-  document.getElementById('playerTwoScore').innerHTML=" Player 2 scored a" + " " + playerTwoScore;
+  let p2score = document.getElementById('playerTwoScore');
+  p2score.innerHTML=" Player 2 scored a" + " " + playerTwoScore;
+  p2score.style = "display: inline-block;";
 }
 function playerThree(){
   let playerThreeScore = playDiceCRITChallenge();
   console.log(playerThreeScore);
   let showScore = document.getElementById("playerThreeScore");
-  document.getElementById('playerThreeScore').innerHTML=" Player 3 scored a" + " " + playerThreeScore;
-
+  let p3score = document.getElementById('playerThreeScore');
+  p3score.innerHTML=" Player 3 scored a" + " " + playerThreeScore;
+  p3score.style = "display: inline-block;";
 }
 function playerFour(){
   let playerFourScore = playDiceCRITChallenge();
   console.log(playerFourScore);
   let showScore = document.getElementById("playerFourScore");
-  document.getElementById('playerFourScore').innerHTML=" Player 4 scored a" + " " + playerFourScore;
+  let p4score = document.getElementById('playerFourScore');
+  p4score.innerHTML=" Player 4 scored a" + " " + playerFourScore;
+  p4score.style = "display: inline-block;";
 }
